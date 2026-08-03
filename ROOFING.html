@@ -1,169 +1,374 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-   
-  <meta name="description" content="SAMMA BUILDERS is a leading roofing, waterproofing, renovation, and construction consultancy company based in Nairobi, Kenya. We specialize in APP membrane waterproofing, modern roofing systems, roof repairs, building renovations, and professional construction solutions across Kenya and East Africa.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="keywords" content="SAMMA BUILDERS, roofing Kenya, waterproofing Kenya, APP membrane waterproofing, roof installation, roof repairs, roof renovation, shingles roofing, construction company Kenya, building renovation, waterproofing contractors, roofing contractors Nairobi, commercial roofing, residential roofing, flat roof waterproofing, construction consultancy, building maintenance, East Africa construction, Nairobi roofing, waterproofing services">
-<meta name="author" content="SAMMA BUILDERS">
-<meta name="robots" content="index, follow">
-<meta name="language" content="English">
-<meta name="revisit-after" content="7 days">
-<meta name="theme-color" content="#0d6efd">
-<meta name="application-name" content="SAMMA BUILDERS">
-<meta property="og:title" content="SAMMA BUILDERS | Roofing & Waterproofing Experts">
-<meta property="og:description" content="Professional roofing, APP membrane waterproofing, renovations, and construction consultancy across Kenya and East Africa.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://sammabuilders.co.ke/assets/img/og-image.jpg">
-<meta property="og:url" content="https://sammabuilders.co.ke">
-<meta property="og:site_name" content="SAMMA BUILDERS">
+<title>SAMMA BUILDERS | Project Gallery</title>
 
-  <!-- Favicons -->
-  <link href="IMAGES/LOGO.png" rel="icon">
-  <link href="IMAGES/LOGO.png" rel="apple-touch-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+<style>
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+/*=============================
+        GLOBAL
+==============================*/
 
-  <!-- =======================================================
-  * Template Name: EstateAgency
-  * Template URL: https://bootstrapmade.com/real-estate-agency-bootstrap-template/
-  * Updated: Aug 09 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#ffffff;
+}
+
+/*=============================
+      GALLERY SECTION
+==============================*/
+
+.gallery-section{
+    width:100%;
+    padding:80px 8%;
+    background:#ffffff;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:42px;
+    color:#0b5d1e;
+    margin-bottom:15px;
+    font-weight:700;
+}
+
+.section-title p{
+    max-width:750px;
+    margin:auto;
+    color:#555;
+    line-height:1.8;
+    font-size:17px;
+}
+
+/*=============================
+        GALLERY GRID
+==============================*/
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+/*=============================
+        IMAGE CARD
+==============================*/
+
+.gallery-item{
+    position:relative;
+    overflow:hidden;
+    border-radius:15px;
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+    transition:.4s;
+    background:#000;
+}
+
+.gallery-item img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    display:block;
+    transition:.6s;
+}
+
+/*=============================
+      HOVER OVERLAY
+==============================*/
+
+.overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    opacity:0;
+    transition:.4s;
+
+    color:#fff;
+    text-align:center;
+}
+
+.overlay h3{
+    font-size:22px;
+    margin-bottom:10px;
+}
+
+.overlay p{
+    font-size:15px;
+    padding:0 20px;
+}
+
+.gallery-item:hover .overlay{
+    opacity:1;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.15);
+}
+
+.gallery-item:hover{
+    transform:translateY(-8px);
+}
+
+/*=============================
+        LIGHTBOX
+==============================*/
+
+.lightbox{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.9);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+}
+
+.lightbox img{
+    width:90%;
+    max-width:900px;
+    max-height:90vh;
+    border-radius:10px;
+}
+
+.lightbox span{
+    position:absolute;
+    top:20px;
+    right:35px;
+    font-size:45px;
+    color:#fff;
+    cursor:pointer;
+}
+
+/*=============================
+        RESPONSIVE
+==============================*/
+
+@media(max-width:768px){
+
+.section-title h2{
+    font-size:32px;
+}
+
+.gallery-item img{
+    height:220px;
+}
+
+}
+
+@media(max-width:500px){
+
+.gallery{
+    grid-template-columns:1fr;
+}
+
+.gallery-item img{
+    height:240px;
+}
+
+}
+
+</style>
+
 </head>
+<body>
 
-<body class="agents-page">
+<section class="gallery-section">
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+<div class="section-title">
 
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-         
-      </a>
+<h2>Our Roofing Gallery</h2>
 
-      
+<p>
+Take a look at some of our completed   roofing projects delivered with quality,
+professionalism and excellence.
+</p>
 
-    </div>
-  </header>
+</div>
 
-  <main class="main">
-    <!-- Agents Section -->
-    <section id="agents" class="agents section">
+<div class="gallery">
 
-      <div class="container">
+<div class="gallery-item">
+<img src="IMAGES/BROWN SHINGLES.jpg" onclick="openImage(this.src)" alt="">
+<div class="overlay">
+</div>
+</div>
 
-        <div class="row gy-5">
+<div class="gallery-item">
+<img src="IMAGES/complete shingles installation.jpeg" onclick="openImage(this.src)" alt="">
+<div class="overlay">
+</div>
+</div>
 
-           <div class="gallery">
+<div class="gallery-item">
+<img src="IMAGES/SAMMA ROOFING.jpg" onclick="openImage(this.src)" alt="">
+<div class="overlay">
+</div>
+</div>
 
-        <a href="IMAGES/SAMMA ROOFING.jpg">
-            <img src="IMAGES/SAMMA ROOFING.jpg" alt="Project 1">
-        </a>
+<div class="gallery-item">
+<img src="images/gallery4.jpg" onclick="openImage(this.src)" alt="">
+<div class="overlay">
+<h3>Construction</h3>
+<p>Professional Workmanship</p>
+</div>
+</div>
 
-        <a href="IMAGES/WhatsApp Image 2025-05-20 at 18.48.31_cb461633.jpg">
-            <img src="IMAGES/WhatsApp Image 2025-05-20 at 18.48.31_cb461633.jpg" alt="Project 2">
-        </a>
+<div class="gallery-item">
+<img src="images/gallery5.jpg" onclick="openImage(this.src)" alt="">
+<div class="overlay">
+<h3>Waterproofing</h3>
+<p>Quality Guaranteed</p>
+</div>
+</div>
 
-        <a href="IMAGES/TIMBER ROOF INSTALLATION.jpg">
-            <img src="IMAGES/TIMBER ROOF INSTALLATION.jpg" alt="Project 3">
-        </a>
+<div class="gallery-item">
+<img src="images/gallery6.jpg" onclick="openImage(this.src)" alt="">
+<div class="overlay">
+<h3>Roofing</h3>
+<p>Long Lasting Solutions</p>
+</div>
+</div>
 
-        <a href="IMAGES/samma nstallation.jpeg">
-            <img src="IMAGES/samma nstallation.jpeg" alt="Project 4">
-        </a>
+<div class="gallery-item">
+<img src="images/gallery7.jpg" onclick="openImage(this.src)" alt="">
+<div class="overlay">
+<h3>Construction</h3>
+<p>Commercial Projects</p>
+</div>
+</div>
 
-        <a href="IMAGES/Expert Installation Always.jpg">
-            <img src="IMAGES/Expert Installation Always.jpg" alt="Project 5">
-        </a>
+<div class="gallery-item">
+<img src="images/gallery8.jpg" onclick="openImage(this.src)" alt="">
+<div class="overlay">
+<h3>Renovation</h3>
+<p>Professional Finishes</p>
+</div>
+</div>
 
-        <a href="IMAGES/HD Roofing & Construction.jpg">
-            <img src="IMAGES/HD Roofing & Construction.jpg" alt="Project 6">
-        </a>
+<div class="gallery-item">
+<img src="images/gallery9.jpg" onclick="openImage(this.src)" alt="">
+<div class="overlay">
+<h3>Roofing</h3>
+<p>Premium Materials</p>
+</div>
+</div>
 
-        <a href="IMAGES/complete shingles installation (3).jpeg">
-            <img src="IMAGES/complete shingles installation (3).jpeg" alt="Project 7">
-        </a>
+<div class="gallery-item">
+<img src="images/gallery10.jpg" onclick="openImage(this.src)" alt="">
+<div class="overlay">
+<h3>Waterproofing</h3>
+<p>APP Membrane Experts</p>
+</div>
+</div>
 
-        <a href="IMAGES/BROWN SHINGLES.jpg">
-            <img src="IMAGES/BROWN SHINGLES.jpg" alt="Project 8">
-        </a>
+<div class="gallery-item">
+<img src="images/gallery11.jpg" onclick="openImage(this.src)" alt="">
+<div class="overlay">
+<h3>Construction</h3>
+<p>Modern Designs</p>
+</div>
+</div>
 
-        <a href="IMAGES/board installation.jpeg">
-            <img src="IMAGES/board installation.jpeg" alt="Project 9">
-        </a>
+<div class="gallery-item">
+<img src="images/gallery12.jpg" onclick="openImage(this.src)" alt="">
+<div class="overlay">
+<h3>Roofing</h3>
+<p>Trusted Professionals</p>
+</div>
+</div>
 
-        <a href="IMAGES/LIGHTGAUGE ROOF.jpg">
-            <img src="IMAGES/LIGHTGAUGE ROOF.jpg" alt="Project 10">
-        </a>
+<div class="gallery-item">
+<img src="images/gallery13.jpg" onclick="openImage(this.src)" alt="">
+<div class="overlay">
+<h3>Renovation</h3>
+<p>Quality Craftsmanship</p>
+</div>
+</div>
 
-        <a href="IMAGES/ROOF BOARD INSTALLATION.jpg">
-            <img src="IMAGES/ROOF BOARD INSTALLATION.jpg" alt="Project 11">
-        </a>
+<div class="gallery-item">
+<img src="images/gallery14.jpg" onclick="openImage(this.src)" alt="">
+<div class="overlay">
+<h3>Consultation</h3>
+<p>Professional Advice</p>
+</div>
+</div>
 
-        <a href="IMAGES/roofers by samma.jpeg">
-            <img src="IMAGES/roofers by samma.jpeg" alt="Project 12">
-        </a>
+<div class="gallery-item">
+<img src="images/gallery15.jpg" onclick="openImage(this.src)" alt="">
+<div class="overlay">
+<h3>SAMMA BUILDERS</h3>
+<p>Building Excellence</p>
+</div>
+</div>
 
-        <a href="IMAGES/TIMBER ROOF INSTALLATION.jpg">
-            <img src="IMAGES/TIMBER ROOF INSTALLATION.jpg" alt="Project 13">
-        </a>
+</div>
 
-        <a href="IMAGES/TIMBER ROOF INSTALLATION.jpg">
-            <img src="IMAGES/TIMBER ROOF INSTALLATION.jpg" alt="Project 14">
-        </a>
+</section>
 
-        <a href="IMAGES/WhatsApp Image 2026-07-21 at 7.42.45 PM.jpeg">
-            <img src="IMAGES/WhatsApp Image 2026-07-21 at 7.42.45 PM.jpeg" alt="Project 15">
-        </a>
+<!-- LIGHTBOX -->
 
-    </div>
+<div class="lightbox" id="lightbox">
 
+<span onclick="closeImage()">&times;</span>
 
-        </div>
+<img id="lightbox-img">
 
-      </div>
+</div>
 
-    </section><!-- /Agents Section -->
+<script>
 
-  </main>
+function openImage(src){
 
-   
+document.getElementById("lightbox").style.display="flex";
 
-  <!-- Scroll Top -->
-  <a href="https://wa.me/254711558911" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-whatsapp"></i></a>
+document.getElementById("lightbox-img").src=src;
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
+}
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+function closeImage(){
 
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+document.getElementById("lightbox").style.display="none";
+
+}
+
+document.getElementById("lightbox").addEventListener("click",function(e){
+
+if(e.target===this){
+
+closeImage();
+
+}
+
+});
+
+</script>
 
 </body>
-
 </html>
